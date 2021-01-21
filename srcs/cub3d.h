@@ -6,7 +6,7 @@
 /*   By: jbodson <jbodson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 14:54:17 by namenega          #+#    #+#             */
-/*   Updated: 2021/01/20 17:04:52 by jbodson          ###   ########.fr       */
+/*   Updated: 2021/01/21 17:28:35 by jbodson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,5 +170,8 @@ void				ft_free_data(t_data *data, char *str);
 */
 
 int					ft_map(t_data *data, t_list *el);
+int					ft_verifmap(int **map, int height, int width);
+int					ft_verifcharacters(int **map, int height, int width);
+int					ft_verifholes(int **map, int height, int width);
 
 #endif

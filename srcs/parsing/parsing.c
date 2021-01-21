@@ -6,7 +6,7 @@
 /*   By: jbodson <jbodson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 17:41:39 by namenega          #+#    #+#             */
-/*   Updated: 2021/01/20 17:08:56 by jbodson          ###   ########.fr       */
+/*   Updated: 2021/01/21 15:59:15 by jbodson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int		ft_parsing_data(t_list *el, t_data *data)
 		return (ft_color_ground(data, &line[1]));
 	else if ((line[0] == 'C') && ft_isspace(line[1]))
 		return (ft_color_sky(data, &line[1]));
-	//printf("%d\n", data->parsed);
 	if (data->parsed == 8)
 	{
 		data->firsttoken = el;
