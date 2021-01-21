@@ -60,7 +60,9 @@ typedef struct	s_data
 	int			**map;
 	int			parsed;
 	int			line_map;
+	int			widthmap;
 	t_list		*lst_line;
+	t_list		*firsttoken;
 }				t_data;
 
 typedef struct	s_vec

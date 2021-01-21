@@ -37,9 +37,12 @@ int		ft_parsing_data(t_list *el, t_data *data)
 		return (ft_color_ground(data, &line[1]));
 	else if ((line[0] == 'C') && ft_isspace(line[1]))
 		return (ft_color_sky(data, &line[1]));
-	printf("%d\n", data->parsed);
+	//printf("%d\n", data->parsed);
 	if (data->parsed == 8)
+	{
+		data->firsttoken = el;
 		return (ft_map(data, el));
+	}
 	else
 		ft_error_exit("Error\nA line is wrong in the .cub\nExit Program");
 	return (1);
@@ -53,6 +56,7 @@ int		ft_gnl(int fd, char *line, t_data *data)
 	t_list	*tmp;
 	t_list	*each_line;
 	
+	data->widthmap = 0;
 	res = 0;
 	while (get_next_line(fd, &line))
 	{
@@ -62,6 +66,7 @@ int		ft_gnl(int fd, char *line, t_data *data)
 		ft_lstadd_back(&data->lst_line, tmp);
 		res = 1;
 	}
+	//data->firsttoken = data->lst_line;
 	tmp = ft_lstnew(line);
 	if (!tmp)
 		return (0);

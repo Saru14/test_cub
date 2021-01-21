@@ -28,6 +28,7 @@
 
 int		ft_event(t_data *data)
 {
+	int i;
 	// mlx_hook(data->mlx_win, 17, 0, ft_exit_hook, (void*)data);
 	// mlx_key_hook(data->mlx_win, ft_key, (void*)data);
 
@@ -39,6 +40,7 @@ int		ft_event(t_data *data)
 
 	// mlx_hook(win_ptr, XEVENT_EXIT, 0, &f, (void *)truc);
 
-	mlx_loop(data->mlx_ptr);
+	//mlx_loop(data->mlx_ptr);
+	i = data->width;
 	return (0);
 }
