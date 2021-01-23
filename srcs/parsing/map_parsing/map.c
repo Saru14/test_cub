@@ -6,7 +6,7 @@
 /*   By: jbodson <jbodson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 16:01:01 by jbodson           #+#    #+#             */
-/*   Updated: 2021/01/21 19:14:48 by jbodson          ###   ########.fr       */
+/*   Updated: 2021/01/23 13:28:44 by jbodson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,25 @@ int		ft_map(t_data *data, t_list *el)
 			else if (((char *)el->content)[j] == '2')
 				map[i][j] = 2;
 			else if (((char *)el->content)[j] == 'N')
+			{
 				map[i][j] = 3;
+				data->position++;
+			}
 			else if (((char *)el->content)[j] == 'S')
+			{
 				map[i][j] = 4;
+				data->position++;
+			}
 			else if (((char *)el->content)[j] == 'E')
+			{
 				map[i][j] = 5;
+				data->position++;
+			}
 			else if (((char *)el->content)[j] == 'W')
+			{
 				map[i][j] = 6;
+				data->position++;
+			}
 			else
 				map[i][j] = 8;
 			//printf("%d", map[i][j]);
@@ -76,6 +88,8 @@ int		ft_map(t_data *data, t_list *el)
 		j = 0;
 		i++;
 	}
+	if (data->position != 1)
+		printf("error position\n");
 	ft_verifmap(map, height2, width);
 	return (1);
 }
@@ -98,7 +112,7 @@ int		ft_verifholes(int **map, int height, int width)
 	{
 		while (j < width)
 		{
-			if (map[i][j] == 7 || map[i][j] == 2)
+			if (map[i][j] <= 7 && map[i][j] >= 2)
 			{		
 				if (!(j < width - 1) || (j == 0))
 				{

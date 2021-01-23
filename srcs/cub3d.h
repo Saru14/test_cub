@@ -6,7 +6,7 @@
 /*   By: jbodson <jbodson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 14:54:17 by namenega          #+#    #+#             */
-/*   Updated: 2021/01/21 17:28:35 by jbodson          ###   ########.fr       */
+/*   Updated: 2021/01/23 13:26:25 by jbodson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct	s_data
 	int			widthmap;
 	t_list		*lst_line;
 	t_list		*firsttoken;
+	int			position;
 }				t_data;
 
 typedef struct	s_vec
